@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { Data } from '../../providers/data';
-
+// import { Data } from '../../providers/data';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 //static data...
 // const data = [{  
 //   title: "post1",
@@ -25,10 +25,14 @@ import { Data } from '../../providers/data';
 export class HomePage {
 // posts: any // static method
 
-  posts: any = []  
-  constructor(public navCtrl: NavController, public _data: Data) {
+  // posts: any = []  
+   posts: FirebaseListObservable<any>
+  // constructor(public navCtrl: NavController, public _data: Data) {
+  constructor(public navCtrl: NavController, public af: AngularFire) {    
     // this.posts = data; //for static data
-    this._data.Posts.subscribe((post) => { this.posts.push(post)}) //treating post as array
+    // this._data.Posts.subscribe((post) => { this.posts.push(post)}) //treating post as array
+    this.posts = af.database.list('/posts') 
+
   }
 
 }

@@ -1,11 +1,14 @@
 <ion-header>
   <ion-navbar>
+    <!--connection tags get status from connection.html-->
+    <!--make sure to add to module-->
+    <connection></connection> 
     <ion-title>Feed</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let card of posts"> 
+  <ion-card *ngFor="let card of posts | async"> 
     <ion-card-content>
       <ion-card-title>
         {{ card.title }}

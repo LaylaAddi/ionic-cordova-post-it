@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Data } from '../providers/data'; //this gets added only to providers array below
 import { AngularFireModule } from 'angularfire2';
-
+import { ConnectionComponent } from '../components/connection/connection'
  const config = {
     apiKey: "AIzaSyBhrGRNwel5Hr_emTuJTO4VukSjLaIX0Kc",
     authDomain: "feed-90035.firebaseapp.com",
@@ -23,7 +23,8 @@ import { AngularFireModule } from 'angularfire2';
     PostPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ConnectionComponent 
   ],
   imports: [
     IonicModule.forRoot(MyApp),
