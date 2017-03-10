@@ -5,6 +5,7 @@ import { PostPage } from '../pages/post/post';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { Data } from '../providers/data'; //this gets added only to providers array below
 
 @NgModule({
   declarations: [
@@ -25,6 +26,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Data] 
 })
 export class AppModule {}
